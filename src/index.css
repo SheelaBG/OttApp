@@ -1,0 +1,704 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  box-sizing: border-box;
+}
+
+/* -------------------------body style-------------------------- */
+body{
+  background-color: aliceblue;
+}
+
+#loader{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* --------------------------nav style-------------------------- */
+nav{
+  color: white;
+  background-color: #343434;
+  padding:20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+}
+
+#link {
+  font-family: 'Bruno Ace', cursive; 
+  color: white;
+  font-size: 25px;
+  padding: 10px 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.2s linear;
+}
+
+#search-bar input{
+  width: 300px;
+  height: 35px;
+  border: none;
+  padding-left: 20px;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+#search-bar button{
+  background-color:rgb(248, 185, 68);
+  color: black;
+  height: 35px;
+  width: 63px;
+  border: none;
+  border-radius: 4px;
+  margin-left: -60px;
+  font-size: 15px; 
+}
+
+#navright{
+  display: flex;
+}
+
+#add-movie a{
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  margin: auto 30px;
+  transition: 0.1s;
+}
+
+#add-movie a:hover{
+  font-size: 18px;
+  text-decoration: none;
+  outline: none;
+  border-bottom: orange 2px solid;
+  transition: 0.1s;
+}
+
+#Signup a{
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  margin-right: 30px;
+  transition: 0.2s;
+}
+
+#Signup a:hover{
+  font-size: 18px;
+  text-decoration: none;
+  outline: none;
+  border-bottom: orange 2px solid;
+  transition: 0.2s;
+}
+
+#fav a{
+  font-size: 25px;
+  color: white;
+}
+
+#fav:hover{
+  font-size: 25px;
+  color: red;
+  transform: scale(1.25);
+}
+
+.hamberger{
+  display: none;
+}
+.suggestion-div{
+  position: absolute;
+  top: 56px;
+  left: 390px;
+  color: black;
+  border-radius: 5px;
+  background-color: #fffefe;
+  width: 240px;
+  padding: 10px;
+  font-size: 13px;
+}
+.suggestion-div ul li{
+  list-style: none;
+  text-decoration: none;
+  margin-bottom: 2px;
+}
+.suggestion-div ul li:hover{
+  background-color: #343434e3;
+  color: white;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.suggestion-div ul a{
+  text-decoration: none;
+  color: black;
+}
+/* --------------------------Movieslist style-------------------------- */
+.movies{
+  width: 90%;
+  height: auto;
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  row-gap: 40px;
+  z-index: 20;
+  
+}
+.movie{
+width: 250px;
+height: auto;
+text-align: center;
+border: 1px solid black;
+padding-top: 25px;
+border-radius: 10px;
+transition: 0.2s;
+position: relative; 
+}
+.movie:hover{
+  background-color: #343434;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px rgb(3, 3, 3);
+}
+
+.movie a{
+  color: black;
+  text-decoration: none;
+}
+.movie a:hover{
+  color: white;
+  text-decoration: none;
+}
+.movie img{
+  width: 200px;
+  height: 270px;
+  border-radius: 10px;
+
+}
+#emptyheart{
+  position: absolute;
+  background: none;
+  border: none;
+  color: red;
+  top: 1px;
+  right: 5px;
+  font-size: 30px;
+  animation: emprtyheart 1s;
+}
+@keyframes emprtyheart {
+  0%{
+    transform: scale(0);
+  }
+  60%{
+    transform: scale(1.4);
+  
+  }
+  100%{
+    transform: scale(1);
+}
+}
+#fillheart{
+position: absolute;
+background: none;
+border: none;
+color: red;
+top: 1px;
+right: 5px;
+font-size: 30px;
+animation: fillheart 1s;
+}
+@keyframes fillheart {
+  0%{
+    transform: scale(0);
+  }
+  60%{
+    transform: scale(1.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+  
+}
+
+#title{
+  background-color: rgb(248, 191, 5) ;
+  font-family:  'Bruno Ace', cursive; 
+  color: black;
+  width: 90%;
+  text-align: center;
+  text-align:center;
+  margin: 10px auto;
+  border-radius: 10px;
+  position: sticky;
+  top: 70px;
+  z-index: 100;
+
+}
+/* --------------------------Moviedetails style-------------------------- */
+ #moviedetails {
+ height:auto;
+ width: 100%;
+ display: grid;
+ background-color: aliceblue;
+ color: black;
+ margin: auto;
+ box-sizing: border-box;
+ z-index: 1;
+ 
+}
+#poster{
+  width: 90%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px auto;
+  box-sizing: border-box;
+ 
+}
+
+#poster img{
+  height: 350px;
+  width: 250px;
+  margin: auto 30px;
+  box-shadow: -10px 20px 25px rgb(90, 78, 78);
+
+}
+#poster div:nth-child(2)
+{
+  margin:auto;
+}
+
+#poster h1{
+  color: #fa0511;
+  font-family:'Bruno Ace', cursive;
+} 
+
+#moviedetails b{
+  font-size:18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(37, 40, 192);
+  margin-right: 10px;
+}
+
+#moviedetails iframe{
+  width: 400px;
+  height: 250px;
+  margin-left: 20px; 
+ 
+} 
+
+#delete,#Update
+{
+  margin: auto;
+}
+#delete button ,#Update button{
+  background-color: #343434;
+  color: white;
+  height: 40px;
+  width: 120px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* #Update
+{
+  margin: auto;
+}
+#Update button{
+  background-color: #343434;
+  color: white;
+  height: 40px;
+  width: 120px;
+  font-size: 20px;
+  margin-bottom: 20px;
+} */
+
+
+/* --------------------------Add Movie style-------------------------- */
+.Addmovie{
+  color: black;
+  box-sizing: border-box;
+  background-color: aliceblue;
+
+ } 
+#Addmovie-form{
+  background-color:rgba(240, 248, 255, 0.151); 
+  height: auto;
+  width: 520px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 5px 15px 22px black;
+}
+#Addmovie-form input{
+  display: block;
+  height: 30px;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 10px;
+  border: 1px black solid;
+}
+#Addmovie-form input:hover{
+  outline: none;
+  border: 2px blue solid;
+}
+#Addmovie-form input::placeholder{
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+#Addmovie-form fieldset{
+  margin: 20px auto;
+  padding-left: 10px;
+  border: 2px solid black;
+}
+#Addmovie-form fieldset label{
+  color: black;
+  align-items: center;
+  padding-right: 10px;
+}
+#Addmovie-form fieldset legend{
+  color: black;
+  font-size: 22px;
+  margin: auto;
+}
+
+#Addmovie-form input[type="checkbox"]{ 
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right:5px;
+
+}
+#Addmovie-form textarea{
+  height: 100px;
+  width: 100%;
+  margin: 20px auto;
+}
+#Addmovie-form button{
+  background-color: #343434;
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  height: 30px;
+  width: 80px;
+  margin: auto;
+  border: none;
+}
+#Addmovie-form button:hover{
+  background-color: rgb(46, 46, 194);
+  color: white;
+  border: 2px white solid;
+  
+}
+/*--------------------------Signup style-------------------------- */
+
+.signup-body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #23242a;
+}
+
+.signup-box{
+  position: relative;
+  width: 380px;
+  height: 420px;
+  background: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.signup-box::before
+{
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg,transparent,transparent,rgb(255, 178, 36),rgb(255, 178, 36),rgb(255, 178, 36));
+  /* background:#45f3ff; */
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 5s linear infinite;
+}
+@keyframes animate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+  
+}
+
+.signup-form{
+  position: absolute;
+  inset: 4px;
+  background: #222;;
+  padding: 50px 40px;
+  border-radius: 8px; 
+  z-index: 2;
+  display: flex;
+  flex-direction: column; 
+} 
+.signup-form h2{
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+.inputbox{
+position: relative;
+width: 300px;
+margin-top: 35px;
+}
+  .inputbox input{
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: #23242a;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+
+}
+ .inputbox span{
+  position: absolute;
+  left: 0;
+  padding: 20px 0px 10px;
+  pointer-events: none;
+  color: #8f8f8f;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+} 
+.inputbox input:valid~span,
+.inputbox input:focus~span
+{
+  color: #fff;
+  font-size: 0.75em;
+  transform: translateY(-34px);
+}
+.inputbox i{
+  position: absolute;
+  left: 0;
+  bottom: 0px; 
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  pointer-events: none;
+} 
+.inputbox input:valid~i,
+.inputbox input:focus~i
+{
+  height: 44px;
+}
+.links
+{
+ display: flex;
+ justify-content: space-between;
+}
+.links a
+{
+ margin: 10px 0;
+ font-size: 0.85em;
+ color: #8f8f8f;
+ text-decoration: none;
+}
+.links a:hover,
+.links a:nth-child(2)
+{
+  color: #fff;
+
+}
+.signup-form input[type="submit"]
+{
+  border: none;
+  outline: none;
+  padding: 9px  25px ;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 0.9em;
+  border-radius: 9px;
+  font-weight: 600;
+  width: 100px;
+  margin-top: 10px;
+
+}
+.signup-form input[type="submit"]:active
+
+{
+  opacity: 0.8;
+}
+
+.search-count h1{
+  text-align: center;
+  color: #343434;
+  margin-top: 40px;
+}
+/*--------------------------Media query style-------------------------- */
+@media (max-width:880px) {
+  nav{
+    padding:20px 50px;
+  }
+  #link {
+    font-size: 23px;
+  }
+  #search-bar input{
+    width: 230px;
+    padding-left: 20px;
+    font-size: 13px;
+  }
+  #search-bar button{
+    width: 59px;
+    margin-left: -40px;
+    font-size: 13px;
+  }
+
+  #add-movie a{
+    font-size: 18px;
+  }
+  #Signup a{
+    font-size: 18px;
+    margin-right: 30px;
+  }
+  #fav a{
+    font-size: 25px;
+    color: white;
+  }
+  .hamberger{
+    display: none;
+  }
+
+}
+@media (max-width:710px) {
+  nav{
+    padding:20px 40px;
+  }
+  #navright{
+    display: none;
+  }
+  #link {
+    font-size: 20px;
+  }
+  #search-bar input{
+    width: 200px;
+    padding-left: 20px;
+    font-size: 13px;
+  }
+  #search-bar button{
+    width: 50px;
+    margin-left: -30px;
+    font-size: 13px;
+  }
+  .hamberger{
+    display: block;
+  }
+  .hamberger span{
+    font-size: 20px;
+  }
+  #navright{
+    position: absolute;
+    top: 70px;
+    width: 250px;
+    background-color: red;
+    color: white;
+  }
+}
+
+@media (max-width:425px) {
+  nav{
+    padding:20px 10px;
+  }
+  #navright{
+    display: none;
+  }
+  #link {
+    font-size: 18px;
+  }
+  #search-bar input{
+    width: 180px;
+    padding-left: 20px;
+    font-size: 11px;
+  }
+  #search-bar button{
+    width: 50px;
+    margin-left: -30px;
+    font-size: 11px;
+  }
+  .hamberger{
+    display: block;
+  }
+  .hamberger span{
+    font-size: 18px;
+  }
+  #navright{
+    position: absolute;
+    top: 70px;
+    width: 250px;
+    background-color: red;
+    color: white;
+  }
+  .movie-list{
+    width: 90vw;
+  }
+  .movies{
+    width: 100%;
+    height: 500px;
+    flex-direction: column;
+    overflow: auto;
+  }
+  .movie{
+    width: 210px;
+    height: 300x;
+    margin: 0px 20px;
+    padding: 10px;
+  }
+  .movie img{
+    height: 250px;
+    width: 180px;
+    margin: 10px 0px;
+  }
+  #title{
+    height: 30px;
+    font-size: 20px;
+    margin: auto;
+  }
+  #fillheart{
+    position: absolute;
+    padding: 0px;
+    top: 0px;
+    right: 2px;
+    transform: scale(0.8);
+  }
+  #emptyheart{
+    transform: scale(0.8);
+
+  }
+
+}
+  
+   
+    
+
+
+
